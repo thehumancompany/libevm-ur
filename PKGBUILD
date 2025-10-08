@@ -39,8 +39,19 @@ if [[ ! -v "_evmfs" ]]; then
     _evmfs="false"
   fi
 fi
-_offline="false"
-_git="false"
+if [[ ! -v "_git" ]]; then
+  _git="false"
+fi
+if [[ ! -v "_git_http" ]]; then
+  _git_http="gitlab"
+fi
+if [[ ! -v "_offline" ]]; then
+  _offline="false"
+fi
+_archive_format="tar.gz"
+if [[ "${_git_http}" == "github" ]]; then
+  _archive_format="zip"
+fi
 _node="nodejs"
 _py="python"
 _pkg=libevm
@@ -136,10 +147,12 @@ elif [[ "${_git}" == true ]]; then
   _sum="SKIP"
 elif [[ "${_git}" == false ]]; then
   if [[ "${_tag_name}" == 'pkgver' ]]; then
-    _src="${_tarname}.tar.gz::${_url}/archive/refs/tags/${_tag}.tar.gz"
-    _sum="d4f4179c6e4ce1702c5fe6af132669e8ec4d0378428f69518f2926b969663a91"
+    _uri="${_url}/archive/refs/tags/${_tag}.${_archive_format}"
+    _src="${_tarname}.tar.gz::${_uri}"
+    _sum="${_archive_sum}"
   elif [[ "${_tag_name}" == "commit" ]]; then
-    _src="${_tarname}.zip::${_url}/archive/${_commit}.zip"
+    _uri="${_url}/archive/${_commit}.${_archive_format}"
+    _src="${_tarname}.${_archive_format}::${_uri}"
     _sum="${_archive_sum}"
   fi
 fi
