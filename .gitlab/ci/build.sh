@@ -23,9 +23,16 @@
 
 
 # This script is run within a virtual environment to build
-#  pakcage
+# package
+
 # $1: platform
 # $2: architecture
+# $3: namespace
+# $4: package
+# $5: project id
+# $6: tag
+# $7: ci job token
+# $8: package registry url
 
 set \
   -euo \
