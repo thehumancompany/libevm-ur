@@ -218,6 +218,8 @@ package_libevm() {
 package_libevm-docs() {
   local \
     _make_opts=()
+  provides=()
+  conflicts=()
   _make_opts=(
     PREFIX="/usr"
     DESTDIR="${pkgdir}"
