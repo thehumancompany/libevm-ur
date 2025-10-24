@@ -63,7 +63,9 @@ pkgname+=(
   "${_pkg}"
 )
 if [[ "${_docs}" == "true" ]]; then
-  _docs="true"
+  pkgname+=(
+    "${_pkg}-docs"
+)
 fi
 pkgver="0.0.0.0.0.0.0.0.1.1.1.1.1.1.1"
 _commit="9da48bb98d051f3d2eb7e624cac1a936140f5f2a"
@@ -141,6 +143,7 @@ _evmfs_uri="${_evmfs_dir}/${_sum}"
 _evmfs_src="${_archive_name}::${_evmfs_uri}"
 _sig_uri="${_evmfs_dir}/${_sig_sum}"
 _sig_src="${_archive_name}.sig::${_sig_uri}"
+source=()
 if [[ "${_evmfs}" == "true" ]]; then
   makedepends+=(
     "evmfs"
@@ -167,10 +170,10 @@ elif [[ "${_git}" == false ]]; then
     _src="${_archive_name}::${_uri}"
   fi
 fi
-source=(
+source+=(
   "${_src}"
 )
-sha256sums=(
+sha256sums+=(
   "${_sum}"
 )
 
