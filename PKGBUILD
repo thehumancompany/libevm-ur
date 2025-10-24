@@ -102,6 +102,10 @@ _evm_make_optdepends=(
     "to build programs written using"
     "the library."
 )
+_libevm_docs_optdepends=(
+  "${_pkg}-docs:"
+    "libEVM documentation."
+)
 optdepends=(
   "${_evm_make_optdepends[*]}"
   "${_node_run_optdepends[*]}"
@@ -220,6 +224,7 @@ package_libevm-docs() {
     _make_opts=()
   provides=()
   conflicts=()
+  optdepends=()
   _make_opts=(
     PREFIX="/usr"
     DESTDIR="${pkgdir}"
