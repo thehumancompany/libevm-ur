@@ -67,8 +67,8 @@ if [[ "${_docs}" == "true" ]]; then
     "${_pkg}-docs"
 )
 fi
-pkgver="0.0.0.0.0.0.0.0.1.1.1.1.1.1.1"
-_commit="9da48bb98d051f3d2eb7e624cac1a936140f5f2a"
+pkgver="0.0.0.0.0.0.0.1"
+_commit="cd7b1310f42de88cdfddedea5133d9d7e5efeee0"
 pkgrel=4
 _pkgdesc=(
   "Bash library containing useful functions"
@@ -133,8 +133,8 @@ _archive_name="${_tarname}.${_archive_format}"
 if [[ "${_offline}" == "true" ]]; then
   _url="file://${HOME}/${pkgname}"
 fi
-_sum="679d18d55d554cd6267d3e2245868aaa8e5a9f17b4e95495ff5d8e14082dc443"
-_sig_sum="9afd013b01b44962980385b39cc2d97b70d66b6055dbb094bc8f880cdc794634"
+_sum="e89b099db3de80ef65c0ec01f019b28fd31ca4d674c7f2826c9f68aee7ef6b3c"
+_sig_sum="36e8f8e99c379d95f9f1bb5fa8452bdac6b23c160592c02e190db217cf8e1461"
 # Dvorak
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
 # Truocolo
