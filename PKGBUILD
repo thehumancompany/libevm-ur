@@ -69,7 +69,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.1"
 _commit="cd7b1310f42de88cdfddedea5133d9d7e5efeee0"
-pkgrel=5
+pkgrel=6
 _pkgdesc=(
   "Bash library containing useful functions"
   "to write native applications interacting"
