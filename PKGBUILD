@@ -27,7 +27,7 @@
 #     <pellegrinoprevete@gmail.com>
 #     <dvorak@0x87003Bd6C074C713783df04f36517451fF34CBEf>
 
-_evmfs_available="$( \
+_evmfs_available="$(
   command \
     -v \
     "evmfs" || \
@@ -69,7 +69,7 @@ if [[ "${_docs}" == "true" ]]; then
 fi
 pkgver="0.0.0.0.0.0.0.1"
 _commit="cd7b1310f42de88cdfddedea5133d9d7e5efeee0"
-pkgrel=7
+pkgrel=8
 _pkgdesc=(
   "Bash library containing useful functions"
   "to write native applications interacting"
